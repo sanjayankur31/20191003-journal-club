@@ -56,8 +56,8 @@
 % how to use multiple references to the same footnote: https://tex.stackexchange.com/questions/27763/beamer-multiple-references-to-the-same-footnote
 
 %% title %%
-\title[NeuroFedora]{\includegraphics[keepaspectratio,width=.25\textwidth]{images/NeuroFedoraLogo01.png}\\NeuroFedora}
-\subtitle{Free Software for Free Neuroscience}
+\title[Journal club]{Standards and Tools in Neuroscience}
+\subtitle{A summary of the Open Source Brain workshop, September 2019}
 \author{Ankur Sinha\\Ph.D. candidate: UH Biocomputation Group, UK,\\Volunteer: Fedora Project.}
 \date[]{}
 %% document begins %%
@@ -69,32 +69,37 @@
 \end{frame}
 
 %% Three slides for 5 minutes, so 9 slides for 15 minutes.
-\section{Free/Open (neuro) Science}
-\begin{frame}[c]{Modern Free/Open Science}
-  \note[item]{We know this, but it's always to remind ourselves how massive modern Open Science is.}
-  \note[item]{It encompasses everything from data collection, to storage, to sharing, to processing, to dissemination of results.}
-  \begin{figure}[htpb]
+\section{The problem statement}
+\begin{frame}[c]{Neuroscience is massive}
+  \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{images/openscience-taxonomy.png}
+    \only<1>{\input{images/Neuroscience-cycle}}%
+    \only<2>{\input{images/Neuroscience-cycle-complex}}
+    \note[item]{A simplified diagram. Actually a lot more complex}
   \end{figure}
-  \footnotetext[1]{\href{https://en.wikipedia.org/wiki/Open\_science}{Petr Knoth and Nancy Pontika (CC BY 3.0)}}
+  \note[item]{It is so massive that you can speak to another neuroscientist and not understand a word of what they say---we specialise}
+  \note[item]{We won't even discuss dissemination to a non scientific audience today---a completely different problem.}
 \end{frame}
-\begin{frame}[c]{The ideal, in short:}
-  Free/Open Science:\\\alert{Everyone} should have the freedom to \alert{share, study, and modify} scientific material.\\
+\begin{frame}[c]{Free/Open Neuroscience}
+  Free/Open science:\\\alert{Everyone} should have the freedom to \alert{share, study, and modify} scientific material.\\
   \pause{}
   \vspace{0.5cm}
-  \alert{Free/Open Science includes and relies heavily on Free/Open Source Software (FOSS).}\\
-  \pause{}
-  \vspace{0.5cm}
-  FOSS\@:\\\alert{Everyone} should have the freedom to \alert{share, study, and modify} software\footnotemark[5].\\
-  \footnotetext[2]{\href{https://u.fsf.org/user-liberation}{Free software foundation}}
 \end{frame}
-\begin{frame}[c]{So we strive to use more and more FOSS}
-  \begin{figure}[htpb]
-    \centering
-    \includegraphics[width=\linewidth]{images/open-source-paper.png}
-  \end{figure}
-  \footnotetext[6]{\href{http://opensourceforneuroscience.org/}{Open source for neuroscience}}
+\begin{frame}[c]{Experimental research: data}
+  Angus's slide 22
+\end{frame}
+\begin{frame}[c]{Modelling: scales}
+  Angus's slide 4
+\end{frame}
+\begin{frame}[c]{Modelling: reuse}
+  Angus's slide 5
+\end{frame}
+\section{Standards: the common tongue}
+\begin{frame}[c]{NWB:\ Neurophysiology data standardisation}
+  Oliver's slides
+\end{frame}
+\begin{frame}[c]{The NeuroML Eco system}
+  Padraig's slides, Boris's slides, Netpyne paper.
 \end{frame}
 \section{NeuroFedora: why, how, what?}
 \begin{frame}[c]{FOSS:\ Developers and users}
