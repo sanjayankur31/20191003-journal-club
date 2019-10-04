@@ -38,6 +38,7 @@
 \usepackage{textgreek}
 \usepackage{euler}
 \usepackage{ccicons}
+\usepackage{pdfpages}
 % \usepackage{minted}
 
 % beamer theme
@@ -68,9 +69,9 @@
   \titlepage{}
 \end{frame}
 
-%% Three slides for 5 minutes, so 9 slides for 15 minutes.
+%% 3 slides for 5 minutes, so 30 slides for 45 minutes.
 \section{The problem statement}
-\begin{frame}[c]{Neuroscience is massive}
+\begin{frame}[c]{Neuroscience is complex, and massive}
   \begin{figure}[h]
     \centering
     \only<1>{\input{images/Neuroscience-cycle}}%
@@ -81,74 +82,39 @@
   \note[item]{We won't even discuss dissemination to a non scientific audience today---a completely different problem.}
 \end{frame}
 \begin{frame}[c]{Free/Open Neuroscience}
-  Free/Open science:\\\alert{Everyone} should have the freedom to \alert{share, study, and modify} scientific material.\\
-  \pause{}
-  \vspace{0.5cm}
+  Free/Open science:\\Scientific material should be easily, openly \alert{accessible to all}.
 \end{frame}
-\begin{frame}[c]{Experimental research: data}
-  Angus's slide 22
-\end{frame}
-\begin{frame}[c]{Modelling: scales}
-  Angus's slide 4
-\end{frame}
-\begin{frame}[c]{Modelling: reuse}
-  Angus's slide 5
-\end{frame}
+{
+  \setbeamercolor{background canvas}{bg=}
+  \includepdf[pages={22,4,5}]{./2019-OSB-slides/OSB_introduction_Final_Angus.pdf}
+}
 \section{Standards: the common tongue}
-\begin{frame}[c]{NWB:\ Neurophysiology data standardisation}
-  Oliver's slides
-\end{frame}
-\begin{frame}[c]{The NeuroML Eco system}
-  Padraig's slides, Boris's slides, Netpyne paper.
-\end{frame}
-\section{NeuroFedora: why, how, what?}
-\begin{frame}[c]{FOSS:\ Developers and users}
+{
+  \setbeamercolor{background canvas}{bg=}
+  \includepdf[pages={1,2,3,4,6,11,15,27,29,30}]{./2019-OSB-slides/2019_09_09_opensourcebrain_nwbn_overview.pdf}
+  \includepdf[pages={1,5,7}]{./2019-OSB-slides/NWBExplorerOSBMeeting2019.pdf}
+  \includepdf[pages={1,7,15,25,32,33}]{./2019-OSB-slides/MultiscaleNetworksNeuroML_Sardinia19.pdf}
+  \includepdf[pages={1,2,7,8,9,10,11,13}]{./2019-OSB-slides/BorisMarin_Sardinia2019.pdf}
+}
+\begin{frame}[c]{Netpyne workflow}
   \begin{figure}[h]
-  \begin{center}
-  \begin{tikzpicture}[scale=1, transform shape]
-    \fill[fill=FedoraBlue, text=white, rounded corners] (0, 0) rectangle ++(8, 1) node[pos=0.5] (A){Developers (upstream)};
-    \fill[fill=FirstGreen, text=white, rounded corners] (0, -2) rectangle ++(8, 1) node[pos=0.5] (B){End users (downstream)};
-    \draw [FriendsMagenta, very thick, ->] (2, 0) -- node [midway, right, text centered] {code} node [midway, left, text centered] {support} ++(0, -1) ;
-    \draw [FriendsMagenta, very thick, ->] (6, -1) -- node [midway, right, text centered] {feedback} ++(0, 1);
-  \end{tikzpicture}
-  \end{center}
+    \centering
+    \includegraphics[width=\linewidth]{images/netpyne.png}
   \end{figure}
 \end{frame}
-\begin{frame}[c]{Neuroscience community: highly multidisciplinary}
-  \begin{itemize}
-    \item \alert{various specialities:} biologists, mathematicians, physicists, chemists, psychologists, \ldots, 
-      \pause{}
-    \item \alert{small proportion of trained software developers}
-  \end{itemize}
+\begin{frame}[c]{Netpyne GUI}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{images/netpyne-gui.png}
+  \end{figure}
 \end{frame}
-\begin{frame}[c]{(Anecdotal) notes on development of research software}
-  \begin{itemize}
-    \item often \alert{single developer}, or small development teams
-    \item limited \alert{maintenance, short-lived projects}
-    \item limited \alert{access to hardware/resources}
-    \item limited \alert{code quality}
-    \item limited \alert{use of established best practices}
-    \item limited \alert{testing for correctness (!)}
-    \item \alert{complex dependency chains}
-    \item lack of \alert{documentation and support}
-    \item lack of \alert{community development know-how}
-  \end{itemize}
-  \note[item]{Give how interdisciplinary neuroscience is, most researchers are NOT trained in development}
-  \note[item]{This implies, and this is based on anecdotal evidence, that the software used in research is not of the best quality}
-\end{frame}
-\begin{frame}[c]{(Anecdotal) notes on users of research software}
-  \begin{itemize}
-    \item \alert{waste time and effort} installing (and reinstalling) their software stacks
-    \item \alert{rarely run test suites (!)}
-    \item \alert{rarely report bugs} upstream
-    \item \alert{rarely send improvements} upstream
-    \item are \alert{unaware of helpful development tools}
-  \end{itemize}
-  \note[item]{The other side of the bridge is the users}
-  \note[item]{Because they aren't trained, they have a hard time setting up and using the software}
-  \note[item]{If correctness of a tool cannot be verified, how can the correctness of the scientific result be claimed?}
-\end{frame}
-\begin{frame}[c]{Distributions liaison between developers and users}
+{
+  \setbeamercolor{background canvas}{bg=}
+  \includepdf[pages={1,2,3,4,25,26}]{./2019-OSB-slides/2019-09-OSB_YazanBilleh_v2.pdf}%chktex 8
+  \includepdf[pages={1,3,7,8,9,23,29}]{./2019-OSB-slides/OSB_2019_yann.pdf}
+}
+\section{NeuroFedora: marketing pitch}
+\begin{frame}[c]{Liaison between developers and users}
   \begin{figure}[h]
   \begin{center}
   \begin{tikzpicture}[scale=1, transform shape]
@@ -163,58 +129,6 @@
   \end{center}
   \end{figure}
 \end{frame}
-\begin{frame}[c]{Distributions, like Fedora, are in a unique position:}
-  \begin{itemize}
-    \item \alert{liaison between upstream and users}
-    \item have the \alert{infrastructure}
-    \item \alert{follow best practices} in software development
-    \item constantly \alert{work on community development}
-    \item \alert{learn from one another}---train while working
-    \item \alert{disseminate} information to end-users
-  \end{itemize}
-\end{frame}
-\begin{frame}[c]{NeuroFedora:}
-  \textcolor{FedoraBlue}{Primary goal:}
-  \begin{itemize}
-    \item Provide a \alert{ready to use, integrated FOSS platform} for neuroscientists\footnotemark[7].
-  \end{itemize}
-  \pause{}
-  \textcolor{FirstGreen}{Secondary/collateral goals:}
-  \pause{}
-  \begin{itemize}
-    \item help \alert{improve the standard and maintenance} of tools
-    \item help users \alert{develop software development skills}
-    \item \alert{make neuroscience accessible} to non-specialists
-  \end{itemize}
-  \footnotetext[7]{Researchers, academics, hobbyists, anyone!}
-\end{frame}
-\begin{frame}[c]{NeuroFedora: current metrics}
-  \begin{itemize}
-    \item \alert{less than a year old\footnotemark[8],}
-      \pause{}
-    \item \textcolor{FirstGreen}{20 volunteers}
-      \begin{itemize}
-        \item 15 package maintainers
-        \item 5 designers, newcomers
-        \item only 5 from a neuroscience background
-      \end{itemize}
-      \pause{}
-    \item \textcolor{FriendsMagenta}{software:}
-      \begin{itemize}
-        \item 120 tools (packages) ready to install\footnotemark[9]:
-          \begin{itemize}
-            \item Neuron, NEST, Genesis, Brian (v1 and v2), Moose, python-libNeuroML, PyLEMS, PyNWB, \ldots
-          \end{itemize}
-        \item \textasciitilde{}170 in queue\footnotemark[10].
-          \begin{itemize}
-            \item NeuroMLlite, pyNeuroML, NetPyNE, \ldots
-          \end{itemize}
-      \end{itemize}
-  \end{itemize}
-  \footnotetext[8]{in its second iteration}
-  \footnotetext[9]{\href{https://src.fedoraproject.org/group/neuro-sig}{src.fedoraproject.org: Neuro-SIG}}
-  \footnotetext[10]{\href{https://pagure.io/neuro-sig/NeuroFedora/issues?status=Open&tags=T\%3A+Software}{Pagure.io: Neuro-SIG: issues}}
-\end{frame}
 \begin{frame}[c]{Search: \enquote{NeuroFedora}}
   \begin{columns}
    \begin{column}{0.3\textwidth}
@@ -224,6 +138,7 @@
       \end{figure}
     \end{column}
     \begin{column}{0.8\textwidth}
+      \textcolor{FeaturesOrange}{\enquote{Live} ISO now ready to download (demo)}\\
       \textcolor{FedoraBlue}{Mailing list:\ neuro-sig@lists.fedoraproject.org}\\
       \textcolor{FirstGreen}{IRC:\ \#fedora-neuro on Freenode}\\
       \textcolor{FeaturesOrange}{Telegram:\ t.me/NeuroFedora}\\
@@ -238,8 +153,6 @@
     \ccbysa{}\\
     \vspace{0.5cm}
     This presentation is made available under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license}.\\
-    \vspace{1cm}
-    The \LaTeX{} source code can be found \href{https://pagure.io/neuro-sig/20190909-OSB-workshop-presentation}{here}.
   \end{center}
 \end{frame}
 \end{document}
